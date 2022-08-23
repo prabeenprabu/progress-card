@@ -1,7 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400;1,600&display=swap");
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
 }
 
 :root {
@@ -10,4 +13,147 @@
     --color-green: #36a35f;
     --color-yellow: #ffdd00;
     --color-light-blue: #caf0f8;
+}
+
+/* ------------------style to section part-------------------- */
+section {
+    background-color: var(--color-navy-blue);
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+section::before {
+    content: "";
+    position: absolute;
+    top: 45%;
+    left: 0;
+    width: 100%;
+    height: 3.5rem;
+    background-color: var(--color-light-blue);
+}
+
+/* ---------------------contianer------------------------ */
+.container {
+    width: 900px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.container .card {
+    position: relative;
+    width: 250px;
+    height: 300px;
+    text-align: center;
+    z-index: 10;
+    margin: 20px 20px 60px;
+}
+
+.container .card .box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(1.2rem);
+    z-index: 10;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+}
+
+.percent {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    z-index: 100;
+}
+.percent .number {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.percent .number h2 {
+    color: white;
+    font-weight: 700;
+    font-size: 3rem;
+}
+.percent .number h2 span {
+    font-size: 1.5rem;
+}
+.text {
+    position: absolute;
+    bottom: -42px;
+    color: white;
+    z-index: 1;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    padding: 30px 20px 10px;
+    background-color: var(--color-red);
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    pointer-events: none;
+    transition: bottom 0.5s, padding 0.5s, z-index 0s, transform 0.5s;
+    transition-delay: 0.5s, 0.5s, 0.5s, 0.5s;
+}
+.card:hover .text {
+    transition-delay: 0s, 0s, 0.5s, 0.5s;
+    padding: 10px 20px;
+    transform: translate(-50%, -50px);
+    z-index: 11;
+    bottom: -70px;
+}
+.card:nth-child(2) .text {
+    background-color: var(--color-yellow);
+}
+.card:nth-child(3) .text {
+    background-color: var(--color-green);
+}
+svg {
+    position: relative;
+    width: 150px;
+    height: 150px;
+}
+svg circle {
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke-width: 10;
+    stroke: rgba(255, 255, 255, 0.05);
+    transform: translate(5px, 5px);
+    stroke-linecap: round;
+}
+svg circle:nth-child(2) {
+    stroke: #fff;
+    stroke-dasharray: 440px;
+    stroke-dashoffset: 440px;
+}
+
+.card:nth-child(1) svg circle:nth-child(2) {
+    stroke-dashoffset: calc(440px - (440px * 88) / 100);
+}
+.card:nth-child(2) svg circle:nth-child(2) {
+    stroke-dashoffset: calc(440px - (440px * 93) / 100);
+}
+.card:nth-child(3) svg circle:nth-child(2) {
+    stroke-dashoffset: calc(440px - (440px * 55) / 100);
 }
