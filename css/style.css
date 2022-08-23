@@ -1,0 +1,13 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-red: #f04242;
+    --color-navy-blue: #011638;
+    --color-green: #36a35f;
+    --color-yellow: #ffdd00;
+    --color-light-blue: #caf0f8;
+}
